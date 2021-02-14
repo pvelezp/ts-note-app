@@ -3,18 +3,18 @@ jobs:
   boby:
     docker:
       -image: circleci/ruby:2.4.1
-  steps:
-    -checkout
-    -run: echo "a first hello"
+    steps:
+      -checkout
+      -run: echo "a first hello"
   sally:
     docker:
       -image: circleci/ruby:2.4.1
   steps:
-    -checkout
-    -run: echo "Doueble trouble"
-  workflows:
-    version:2
-    boby_sally:
+    - checkout
+    - run: echo "Doueble trouble"
+workflows:
+  version:2
+  boby_sally:
     jobs:
       -boby
       -sally
